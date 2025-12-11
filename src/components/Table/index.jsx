@@ -396,6 +396,7 @@ const TableBody = ({ tableData, loading, selectedRow, handleSelectRule, searchPa
  * @returns {JSX.Element} - Rendered table with all functionality
  */
 export default function NewTable({ tableConfig }) {
+       
     const [searchParams, setSearchParams] = useSearchParams();
     const [loading, setLoading] = useState(false);
     const [isRefreshing, setIsRefreshing] = useState(false);

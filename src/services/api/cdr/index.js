@@ -2,12 +2,12 @@ import cdrApiClient from "./config";
 
 class CdrApiService {
 
-    static async details(id, signal) {
-        const response = await projectApiClient.get("/" + id, {
-            signal,
-        });
-        return response.data;
-    }
+    // static async details(id, signal) {
+    //     const response = await projectApiClient.get("/" + id, {
+    //         signal,
+    //     });
+    //     return response.data;
+    // }
 
     static async getList(params, signal) {
         const response = await cdrApiClient.get("/", {

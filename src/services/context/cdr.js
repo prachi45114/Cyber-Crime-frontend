@@ -8,17 +8,14 @@ const CdrContext = createContext(null);
 
 export const CdrProvider = ({ children }) => {
     const cdrListState = useCdrList();
-console.log(cdrListState)
+
     return (
-        <CdrContext.Provider
-            value={{
-                ...cdrListState,
-            }}
-        >
+        <CdrContext.Provider value={cdrListState}>
             {children}
         </CdrContext.Provider>
     );
 };
+
 
 export const useCdr = () => {
     const context = useContext(CdrContext);
