@@ -1,0 +1,121 @@
+/* ConfirmationAlert.module.css */
+.alertContainer {
+    z-index: 9999;
+}
+
+.alertPopup {
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    background-color: var(--delete-popup-bgColor);
+    border: 1px solid var(--chart-border-color);
+}
+
+.alertHeader {
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.alertTitle {
+    color: var(--text-color);
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.alertCloseButton {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    background: none;
+    border: none;
+    color: #718096;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.alertCloseButton:hover {
+    color: #2d3748;
+}
+
+/* Updated icon styles */
+.alertIcon {
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Target the specific SweetAlert icon wrapper */
+:global(.swal2-icon) {
+    margin: 1.5em auto 0.6em !important;
+}
+
+.alertContent {
+    color: #4a5568;
+    font-size: 16px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.alertActions {
+    margin-top: 25px;
+    gap: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.alertConfirmButton,
+.alertCancelButton,
+.alertErrorButton {
+    padding: 10px 24px;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 16px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+.alertConfirmButton {
+    background-color: #e53e3e;
+    color: white;
+}
+
+.alertConfirmButton:hover {
+    background-color: #c53030;
+}
+
+.alertCancelButton {
+    background-color: var(--cancel-popup-button);
+    color: #2d3748;
+}
+
+.alertCancelButton:hover {
+    background-color: var(--cancel-popup-button-hover);
+}
+
+.alertErrorButton {
+    background-color: #e53e3e;
+    color: white;
+}
+
+.alertErrorButton:hover {
+    background-color: #c53030;
+}
+
+.alertInput {
+    margin-top: 10px;
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 4px;
+}
+
+.alertFooter {
+    margin-top: 20px;
+    color: #718096;
+    font-size: 14px;
+    text-align: center;
+}

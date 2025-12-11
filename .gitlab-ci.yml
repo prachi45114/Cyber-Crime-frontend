@@ -1,0 +1,73 @@
+default:
+  image: docker:24.0.5
+  services:
+    - name: docker:24.0.5
+      alias: docker
+      command:
+        - "--tls=false"
+        - "--insecure-registry=core.harbor.k8.c3ihub"
+        - "--insecure-registry=registry.gitlab.internal.k8.c3ihub"
+
+variables:
+  DOCKER_HOST: tcp://docker:2375
+  DOCKER_DRIVER: overlay2
+
+  DOCKER_TLS_CERTDIR: ""
+
+workflow:
+  name: Build & deploy react frontend to Kubernetes
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main"
+
+
+stages:
+  - tests
+  - build
+  - deploy
+
+tests:
+  stage: tests
+  environment:
+    name: $CI_COMMIT_BRANCH
+    url: https://$CI_COMMIT_BRANCH.support.k8.c3ihub
+  script:
+    - echo "Compiling the code..."
+    - echo "Compiled the complete."
+
+build:
+  stage: build
+  before_script:
+      - echo "$HARBOR_PASSWORD" | docker login $HARBOR_REGISTRY --username $HARBOR_USER --password-stdin
+      - docker buildx create --use --name gitlab-builder || docker buildx use gitlab-builder
+      - docker buildx inspect --bootstrap
+
+  script:
+    - |
+        docker buildx build \
+          --tag $HARBOR_REGISTRY_IMAGE:latest \
+          --tag $HARBOR_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA \
+          --progress=plain \
+          --load \
+          --cache-from=type=local,src=/cache/buildx \
+          --cache-to=type=local,dest=/cache/buildx,mode=max \
+          -f Dockerfile \
+          .
+
+    - docker push $HARBOR_REGISTRY_IMAGE:latest
+    - docker push $HARBOR_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA
+
+ 
+deploy:
+  stage: deploy
+  environment:
+    name: $CI_COMMIT_BRANCH
+  image:
+    name: bitnami/kubectl:latest
+    entrypoint: ['']
+  script:
+    - kubectl config get-contexts
+    - kubectl config use-context soc/kubernetes/k8-cluster:k8-internal-soc
+    - kubectl --insecure-skip-tls-verify -n gitlab get pods
+    - export VAR_CI_REGISTRY_IMAGE="$HARBOR_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA"
+    - sed -i -e "s|VAR_CI_REGISTRY_IMAGE|$VAR_CI_REGISTRY_IMAGE|g" kubernetes/web.yml
+    - kubectl --insecure-skip-tls-verify apply -f kubernetes/web.yml

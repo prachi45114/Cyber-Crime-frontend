@@ -1,0 +1,139 @@
+.formGroup {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    /* margin-bottom: 1rem; */
+}
+.label {
+    font-size: var(--label-font-size);
+    color: var(--initial-color);
+}
+
+.dark .label {
+    color: #ffffff !important;
+}
+
+.required {
+    color: var(--required-color);
+}
+.inputWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    /* min-height: 4.2rem; */
+}
+.inputWrapper input {
+    border: 1px solid var(--initial-border-color);
+    padding: 0.5rem 0.7rem;
+    font-size: var(--input-font-size);
+    border-radius: var(--field-border-radius);
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    width: 100%;
+    background: var(--initial-field-background-color);
+}
+.inputWrapper input:hover {
+    border: 1px solid var(--hover-border-color);
+}
+
+.inputWrapper input::-ms-expand {
+    background-color: transparent;
+    border: 0;
+}
+
+.inputWrapper input:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 #6e6b7b;
+}
+
+.inputWrapper input:focus {
+    color: #6e6b7b;
+    background-color: var(--active-field-background-color);
+    border: 2px solid var(--active-border-color);
+    outline: 0;
+    box-shadow: var(--active-box-shadow);
+}
+.formGroup .inputWrapper:has(input:focus) .label {
+    color: var(--active-color);
+}
+
+.inputWrapper input::-moz-placeholder {
+    color: var(--placeholder-color);
+}
+
+.inputWrapper input:-ms-input-placeholder {
+    color: var(--placeholder-color);
+}
+
+.inputWrapper input::placeholder {
+    color: var(--placeholder-color);
+}
+
+.inputWrapper input:disabled,
+.inputWrapper input[readonly] {
+    background-color: var(--disabled-field-background-color) !important;
+    opacity: 0.7;
+}
+.errorText {
+    font-size: var(--label-font-size);
+    color: var(--error-color);
+    letter-spacing: var(--field-letter-spacing);
+}
+.inputError {
+    border: 2px solid var(--error-color) !important;
+}
+.formGroup .inputWrapper:has(input.inputError) .label {
+    color: var(--error-color);
+    letter-spacing: var(--field-letter-spacing);
+}
+.inputWrapper input::placeholder {
+    font-weight: var(--placeholder-font-weight);
+    font-size: var(--placeholder-font-size);
+}
+
+.autoSuggestContainer {
+    position: relative;
+    width: 100%;
+}
+
+.suggestionsList {
+    position: absolute;
+    top: calc(100% + 0.2rem);
+    left: 0;
+    right: 0;
+    max-height: 206px;
+    overflow-y: auto;
+    background: var(--active-field-background-color);
+    border-top: none;
+    border-radius: 0 0 4px 4px;
+    --v-shadow-key-umbra-color: 47, 43, 61;
+
+    box-shadow: 0 2px 8px rgba(var(--v-shadow-key-umbra-color), 0.12), 0 0 transparent, 0 0 transparent;
+    z-index: 1000;
+    margin: 0;
+    padding: 0.45rem;
+    padding-right: 0.25rem;
+    list-style: none;
+    border-radius: 0.4rem;
+}
+
+.suggestionItem {
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    border-radius: 0.37rem;
+    font-size: 0.9375rem;
+    color: var(--text-color);
+}
+
+.suggestionItem:hover,
+.suggestionItem.selected {
+    background: #f5f5f5;
+    color: black;
+}
+
+.suggestionsLoading {
+    padding: 8px 12px;
+    color: #666;
+    font-style: italic;
+}

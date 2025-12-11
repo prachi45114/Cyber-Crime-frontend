@@ -1,0 +1,30 @@
+:root {
+    --button-font-weight: 450;
+    --button-font-size: 0.85rem;
+    --button-padding: 0.6rem 1.3rem;
+    --button-radius: 6px;
+    --button-letter-spacing: 0.09rem;
+
+    /* Orange-500 primary color */
+    --primary-rgb: 249, 115, 22;
+    --primary-text-color: #fff;
+
+    --secondary-rgb: 115, 118, 130;
+    --secondary-text-color: #fff;
+
+    --success-rgb: 40, 199, 111;
+    --success-text-color: #fff;
+
+    --info-rgb: 0, 186, 209;
+    --info-text-color: #fff;
+
+    /* Orange-500 for warning/submit buttons */
+    --warning-rgb: 249, 115, 22;
+    --warning-text-color: #fff;
+
+    --danger-rgb: 255, 76, 81;
+    --danger-text-color: #fff;
+
+    --dark-rgb: 10, 10, 10;
+    --dark-text-color: #fff;
+}

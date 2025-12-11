@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: react
+  namespace: asset-v3
+spec:
+  selector:
+    matchLabels:
+      app: react
+  template:
+    metadata:
+      labels:
+        app: react
+    spec:
+      imagePullSecrets:
+      - name: harbor-secret
+      containers:
+      - image: VAR_CI_REGISTRY_IMAGE
+        name: webserver
+        resources:
+          requests:
+            memory: "400Mi"
+            cpu: "400m"
+          limits:
+            memory: "400Mi"
+            cpu: "400m"
+#        env:
+#        - name: REACT_APP_BACKEND_BASE_PATH
+#          value: ""
+        ports:
+        - containerPort: 80
+          name: nginx

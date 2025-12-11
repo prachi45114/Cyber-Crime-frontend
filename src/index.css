@@ -1,0 +1,282 @@
+@import url("https://fonts.googleapis.com/css2?family=Public+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Geist+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Geist+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --font-sans: "Geist Sans", sans-serif;
+        --font-mono: "Geist Mono", monospace;
+        --background: 0 0% 98%;
+        --foreground: 215 25% 27%;
+
+        --card: 0 0% 100%;
+        --card-foreground: 215 25% 27%;
+
+        --popover: 0 0% 100%;
+        --popover-foreground: 215 25% 27%;
+
+        --primary: 24 95% 53%;
+        --primary-foreground: 0 0% 100%;
+
+        --primary-glow: 32 95% 60%;
+        --primary-soft: 28 90% 95%;
+
+        --secondary: 220 13% 95%;
+        --secondary-foreground: 215 25% 27%;
+
+        --muted: 220 13% 95%;
+        --muted-foreground: 215 16% 47%;
+
+        --accent: 28 90% 95%;
+        --accent-foreground: 24 95% 53%;
+
+        --destructive: 0 75% 60%;
+        --destructive-foreground: 0 0% 100%;
+
+        --success: 142 76% 36%;
+        --success-foreground: 0 0% 100%;
+
+        --warning: 43 96% 56%;
+        --warning-foreground: 0 0% 100%;
+
+        --border: 220 13% 91%;
+        --input: 220 13% 91%;
+        --ring: 24 95% 53%;
+
+        --radius: 0.75rem;
+
+        /* Custom VAPT theme tokens */
+        --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+        --gradient-soft: linear-gradient(180deg, hsl(var(--background)), hsl(var(--muted)));
+        --shadow-soft: 0 4px 6px -1px hsl(var(--primary) / 0.1);
+        --shadow-glow: 0 0 20px hsl(var(--primary) / 0.15);
+        --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+        --sidebar-background: 0 0% 98%;
+
+        --sidebar-foreground: 240 5.3% 26.1%;
+
+        --sidebar-primary: 240 5.9% 10%;
+
+        --sidebar-primary-foreground: 0 0% 98%;
+
+        --sidebar-accent: 240 4.8% 95.9%;
+
+        --sidebar-accent-foreground: 240 5.9% 10%;
+
+        --sidebar-border: 220 13% 91%;
+
+        --sidebar-ring: 217.2 91.2% 59.8%;
+    }
+
+    .dark {
+        --background: 222.2 84% 4.9%;
+        --foreground: 210 40% 98%;
+
+        --card: 222.2 84% 4.9%;
+        --card-foreground: 210 40% 98%;
+
+        --popover: 222.2 84% 4.9%;
+        --popover-foreground: 210 40% 98%;
+
+        --primary: 24 95% 53%;
+        --primary-foreground: 0 0% 100%;
+
+        --secondary: 217.2 32.6% 17.5%;
+        --secondary-foreground: 210 40% 98%;
+
+        --muted: 217.2 32.6% 17.5%;
+        --muted-foreground: 215 20.2% 65.1%;
+
+        --accent: 217.2 32.6% 17.5%;
+        --accent-foreground: 210 40% 98%;
+
+        --destructive: 0 62.8% 30.6%;
+        --destructive-foreground: 210 40% 98%;
+
+        --border: 217.2 32.6% 17.5%;
+        --input: 217.2 32.6% 17.5%;
+        --ring: 212.7 26.8% 83.9%;
+        --sidebar-background: 240 5.9% 10%;
+        --sidebar-foreground: 240 4.8% 95.9%;
+        --sidebar-primary: 224.3 76.3% 48%;
+        --sidebar-primary-foreground: 0 0% 100%;
+        --sidebar-accent: 240 3.7% 15.9%;
+        --sidebar-accent-foreground: 240 4.8% 95.9%;
+        --sidebar-border: 240 3.7% 15.9%;
+        --sidebar-ring: 217.2 91.2% 59.8%;
+    }
+}
+
+@layer base {
+    * {
+        border-color: hsl(var(--border));
+    }
+
+    body {
+        @apply bg-background text-foreground;
+    }
+}
+
+:root {
+    --backgroundColor: #f8f8fa;
+    --whiteBackground: #ffffff;
+    --foreground: #171717;
+    --v-global-theme-primary: 115, 103, 240;
+    --primary-hover-color: rgba(211, 206, 207, 0.2);
+    --primary-active-group-menu: rgba(211, 206, 207, 0.3);
+    --primary-active-color: #ff4c51;
+    --primary-box-shadow: rgba(245, 134, 52, 0.3);
+    --text-color: #444050;
+    --text-secondary-color: #5a5a5a9c;
+    --text-active-color: white;
+    --bg-warning-color: #ff9f43;
+    --primary-font-family: "Public Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    --text-black: black;
+    --text-white: white;
+    --text-muted: #6d6b77;
+    --violet-color: rgb(115, 103, 240);
+    --violet-light-color: rgb(233, 231, 253);
+    --red-color: rgb(255, 76, 81);
+    --red-light-color: #ffe2e3;
+    --green-color: rgb(40, 199, 111);
+    --green-light-color: #ddf6e8;
+    --blue-color: rgb(0, 186, 209);
+    --blue-light-color: #d6f4f8;
+    --orange-color: rgb(255, 159, 67);
+    /* --orange-light-color: #ff9f43;
+    rgb(255, 240, 224) */
+    --orange-text-color: rgb(247, 127, 16);
+    --orange-light-color: rgb(255, 240, 225);
+
+    --yellow-color: rgb(255, 193, 7);
+    --yellow-light-color: rgb(255, 253, 219);
+
+    --purple-color: rgb(155, 89, 182);
+    --purple-light-color: rgb(233, 220, 255);
+
+    --pink-color: rgb(236, 72, 153);
+    --pink-light-color: rgb(255, 182, 204);
+
+    --brown-color: rgb(139, 69, 19);
+    --brown-light-color: rgb(222, 184, 135);
+
+    --gray-color: rgb(108, 117, 125);
+    --gray-light-color: rgb(248, 249, 250);
+    --disabled-bg-color: #d3d3d3;
+    /* --disabled-text-color: #a0a0a0; */
+    --disabled-text-color: #858484;
+    --light-bg-color: #eef1f3;
+
+    --theme-error: 255, 76, 81;
+    --theme-success: 40, 199, 111;
+    --theme-orange: 255, 159, 67;
+    --theme-green: 40, 199, 111;
+    --theme-violet: 115, 103, 240;
+    --theme-red: 255, 76, 81;
+    --theme-blue: 0, 186, 209;
+    --theme-pink: 236, 72, 153;
+    /* --theme-primary:  245 134 52; */
+    --theme-primary: 251 146 60;
+
+    --max-width: 1800px;
+    --white-color: #ffffff;
+    --border-color: #f0f0f0;
+    --details-bg-color: #ffffff;
+    --select-box-shadow: rgba(47, 43, 61, 0.12);
+}
+/* [data-theme="dark"]  */
+.dark {
+    --transparent: #2f3349;
+    --backgroundColor: #161616;
+    --whiteBackground: #111827;
+    --text-color: white !important;
+    --text-black: white;
+    --primary-active-group-menu: #2a2e33;
+    --primary-hover-color: #2a2e33;
+    --border-color: #313131 !important;
+    --details-bg-color: #1f2937;
+    --select-box-shadow: rgba(228, 226, 236, 0.12);
+}
+/* :root {
+    --background: #ffffff;
+    --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background: #f8f8fa;
+        --foreground: black;
+        --primary-font-family: "Public Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+        --error-color: rgb(255, 76, 81);
+    }
+} */
+
+* {
+    font-family: var(--primary-font-family) !important;
+}
+
+body {
+    color: var(--foreground);
+    background: var(--backgroundColor);
+    font-family: var(--primary-font-family);
+}
+.card {
+    box-shadow: 0 3px 12px rgba(47, 43, 61, 0.14), 0 0 transparent, 0 0 transparent;
+    background-color: white;
+    padding: 2rem;
+    max-width: 1500px;
+    margin: auto;
+    border-radius: 0.3rem;
+}
+
+::-webkit-scrollbar {
+    width: 3.5px;
+}
+
+*:hover::-webkit-scrollbar {
+    width: 3.5px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    border-radius: 10px;
+}
+
+*:hover::-webkit-scrollbar-thumb {
+    background-color: rgb(219, 218, 222, 0.8);
+}
+@keyframes dots {
+    0% {
+        content: "";
+    }
+    33% {
+        content: ".";
+    }
+    66% {
+        content: "..";
+    }
+    100% {
+        content: "...";
+    }
+}
+
+.loading_dot::after {
+    content: ""; /* Default text */
+    animation: dots 1.5s steps(3, end) infinite; /* Animate through steps */
+    margin-left: 5px;
+    width: 1rem;
+    display: inline-block;
+}
+
+/* VAPT Management Tool Design System - Orange Theme 
+All colors MUST be HSL.
+*/

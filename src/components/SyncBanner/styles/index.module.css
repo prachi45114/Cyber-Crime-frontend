@@ -1,0 +1,61 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.syncHeader {
+    background-color: var(--background-color);
+    box-sizing: border-box;
+    border-radius: 0.5rem;
+    width: 100%;
+    margin: 0;
+    box-shadow: 0 2px 8px rgba(47, 43, 61, 0.12), 0 0 transparent, 0 0 transparent;
+    max-width: var(--table-max-width);
+    margin: auto;
+    overflow: auto;
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    padding-right: 1rem;
+    gap: 1.5rem;
+}
+
+.syncButton {
+    align-self: flex-end;
+}
+.syncButton span {
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.syncButton span svg {
+    display: inline-block;
+}
+.lastSync {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    color: var(--text-color);
+    font-size: 0.8rem;
+}
+
+.lastSyncRow {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* aligns icon + text to right */
+    font-weight: 800;
+    gap: 0.3rem;
+}
+
+.syncStatus {
+    background-color: rgb(252, 240, 137);
+    border-radius: 0.4rem;
+    padding-block: 0.2rem;
+    padding-inline: 0.5rem;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+}

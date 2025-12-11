@@ -1,0 +1,46 @@
+.container tr {
+    border-bottom: 1px solid rgb(var(--text-theme), 0.12);
+}
+.container tr td {
+    color: rgba(var(--text-theme), 0.8);
+    font-size: 0.85rem;
+    letter-spacing: 0.2px;
+    font-weight: 400;
+    padding-block: 0.23rem;
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    max-width: 130px;
+    padding-left: 1rem;
+    /* width: 100px; */
+}
+.checkbox_cell {
+    padding-left: 1rem;
+}
+.action_cell > div {
+    display: flex;
+    align-items: center;
+    /* gap: 1rem; */
+}
+.action_icon {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    color: rgba(var(--text-theme), 0.7);
+    transition: color 0.2s ease;
+    padding: 0.6rem;
+    border-radius: 2rem;
+}
+.action_icon svg {
+    width: 22px;
+    height: 22px;
+}
+.action_icon:hover {
+    background-color: rgba(226, 224, 224, 0.4);
+}
+.checkbox label {
+    color: #b9b7b7;
+}
+.checkbox label:first-of-type:hover {
+    background-color: rgba(226, 224, 224, 0.27);
+}

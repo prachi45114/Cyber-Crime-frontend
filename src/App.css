@@ -1,0 +1,58 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--primary-font-family) !important;
+}
+/* span {
+    display: flex;
+    width: fit-content;
+} */
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+    display: block;
+    vertical-align: middle;
+}
+button,
+input:where([type="button"]),
+input:where([type="reset"]),
+input:where([type="submit"]) {
+    -webkit-appearance: button;
+    background-color: #0000;
+    background-image: none;
+}
+button,
+select {
+    text-transform: none;
+}
+*,
+:before,
+:after {
+    box-sizing: border-box;
+    border-width: 0;
+    border-style: solid;
+    border-color: #e5e7eb;
+}
+a {
+    text-decoration: none;
+}
+.css-1dimb5e-singleValue {
+    color: var(--text-color) !important;
+}
+
+.react-flow__panel {
+    background-color: #161616;
+}
+#form-login-form label {
+    color: black;
+}
+
+p + p {
+    margin: initial !important;
+}

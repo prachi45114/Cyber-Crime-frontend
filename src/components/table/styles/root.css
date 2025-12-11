@@ -1,0 +1,18 @@
+:root {
+    --table-background-color: #ffffff;
+    --table-border-radius: 6px;
+    --text-theme: 47, 43, 61;
+    /* --table-active-color: rgb(245, 134, 52, 1); */
+    --table-active-color: rgb(52, 112, 228);
+    --table-box-shadow: 0 3px 12px rgb(var(--text-theme), 0.14), 0 0 transparent, 0 0 transparent;
+    --table-text-color: rgb(var(--text-theme), 0.9);
+    --table-text-muted-color: rgb(var(--text-theme), 0.7);
+    --table-max-width: 1500px;
+    --table-error-color: 255, 76, 81;
+}
+
+[data-theme="dark"] {
+    --transparent: #2f3349;
+    --table-background-color: var(--transparent);
+    --text-theme: 255, 255, 255;
+}

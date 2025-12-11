@@ -1,0 +1,876 @@
+.container {
+    position: relative;
+    color: #333;
+}
+
+/* Modern Scrollbar UI */
+::-webkit-scrollbar {
+    width: 6px; /* Thin scrollbar */
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Light gray track */
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #bbb; /* Scrollbar color */
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #888; /* Darker on hover */
+}
+
+.controlBar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-radius: 4px;
+    width: max-content;
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); */
+}
+
+.kqlButton {
+    display: flex;
+    align-items: center;
+    height: 32px;
+    padding: 0 12px;
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    background-color: #e6e6e6;
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.kqlButton:hover {
+    background-color: #d9d9d9;
+}
+
+.dateButtonContainer {
+    position: relative;
+    display: flex;
+    height: 38px;
+}
+
+.dateDisplayButton {
+    display: flex;
+    /* min-width: 100px; */
+    align-items: center;
+    height: 38px;
+    padding: 0 12px;
+    border: 1px solid #cad3e2;
+    border-left: none;
+    border-radius: 0px 4px 4px 0px;
+    background-color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    cursor: pointer;
+    transition: border-color 0.2s ease;
+}
+
+.dateRangeButtonsContainer {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    border: 1px solid #cad3e2;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    background: white;
+}
+.dateRangeButtonsContainer .alertIcon svg {
+    width: 31px;
+    height: 31px;
+    color: #a71627;
+    display: flex;
+    padding-right: 1rem;
+}
+
+.dateRangeButtonsContainer button {
+    /* max-width: 170px; */
+    letter-spacing: 1px;
+    padding: 12px 2px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    position: relative;
+    font-size: 14px;
+}
+.dateRangeButtonsContainer.isDateRangeActive button {
+    color: #008a5e;
+}
+.dateRangeButtonsContainer.invalidDateRange button {
+    color: #a71627;
+}
+.dateRangeButtonsContainer.invalidDateRange .rightArrow svg {
+    color: #a71627;
+}
+.dateRangeButtonsContainer button span {
+    padding-inline: 0.55rem;
+}
+.dateRangeButtonsContainer .rightArrow svg {
+    width: 15px;
+    height: 15px;
+    color: #333;
+}
+.dateRangeButtonsContainer.invalidDateRange button.active::after {
+    content: "";
+    position: absolute;
+    bottom: 2px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #a71627;
+}
+.dateRangeButtonsContainer button.active::after {
+    content: "";
+    position: absolute;
+    bottom: 3px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: rgb(255, 142, 6);
+}
+
+.calendarButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 38px;
+    padding-inline: 0.5rem;
+    /* width: 32px; */
+    border: 1px solid #cad3e2;
+    border-right: none;
+    border-radius: 4px 0 0 4px;
+    /* background-color: #ecf1f9; */
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    gap: 0.3rem;
+}
+.calendarButton svg {
+    width: 16px;
+    height: 16px;
+    display: flex;
+    /* color: #1750ba !important; */
+    @apply text-orange-500 !important;
+}
+
+.calendarButton:hover {
+    background-color: #f5f7fa;
+}
+
+.refreshButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 38px;
+    padding: 0 20px;
+    /* background-color: #0083bf; */
+    color: #fff;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    gap: 0.2rem;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+.refreshButton svg {
+    width: 18px;
+    height: 18px;
+    display: flex;
+}
+
+.refreshButton:hover {
+    /* background-color: #00a29a; */
+    transform: translateY(-1px);
+}
+
+.refreshButtonDisabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.quickMenu {
+    position: absolute;
+    top: 45px;
+    left: 0;
+    z-index: 50;
+    width: 400px;
+    background-color: #fff;
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    animation: slideIn 0.2s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.section {
+    margin-bottom: 20px;
+}
+
+.sectionTitle {
+    font-size: 12px;
+    font-weight: 600;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+}
+
+.quickSelectInputs {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.inputWrapper {
+    display: flex;
+    align-items: center;
+}
+
+.inputLabel {
+    font-size: 14px;
+    color: #333;
+    margin-right: 12px;
+}
+
+.numberInput {
+    width: 80px;
+    padding: 5px 12px;
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #333;
+    transition: border-color 0.2s ease;
+}
+
+.numberInput:focus {
+    border-color: #0083bf;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 191, 179, 0.2);
+}
+
+.selectInput {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #333;
+    background-color: #fff;
+    transition: border-color 0.2s ease;
+}
+
+.selectInput:focus {
+    border-color: #0083bf;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 191, 179, 0.2);
+}
+
+.applyButton {
+    padding: 5px 20px;
+    /* color: rgb(0, 97, 166); */
+    /* background-color: rgb(204, 228, 245); */
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.applyButton:hover {
+    /* background-color: #ccefe9; */
+    transform: translateY(-1px);
+}
+
+.commonRangesGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.rangeButton {
+    width: 100%;
+    padding: 8px;
+    text-align: left;
+    font-size: 14px;
+    color: #333;
+    background-color: #fff;
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.rangeButton:hover {
+    background-color: #f5f7fa;
+    transform: translateX(2px);
+}
+
+.refreshSection {
+    padding-top: 20px;
+    border-top: 1px solid #d9d9d9;
+}
+
+.refreshControls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.toggleContainer {
+    position: relative;
+    width: 48px;
+    height: 24px;
+}
+
+.toggleInput {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.toggleLabel {
+    display: block;
+    height: 26px;
+    border-radius: 12px;
+    background-color: #d9d9d9;
+    cursor: pointer;
+    margin-right: -2px;
+    transition: background-color 0.2s ease;
+}
+
+.toggleActive {
+    background-color: #0083bf;
+}
+
+.toggleHandle {
+    position: absolute;
+    top: 3px;
+    left: 2px;
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border-radius: 50%;
+    border: 1px solid #d9d9d9;
+    transition: transform 0.2s ease;
+}
+
+.toggleHandleActive {
+    transform: translateX(24px);
+}
+
+.refreshLabel {
+    font-size: 14px;
+    color: #333;
+}
+
+.refreshInput {
+    width: 80px;
+    padding: 5px 12px;
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #333;
+    transition: border-color 0.2s ease;
+}
+
+.refreshInput:focus {
+    border-color: #0083bf;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 191, 179, 0.2);
+}
+
+.refreshSelect {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #333;
+    background-color: #fff;
+    transition: border-color 0.2s ease;
+}
+
+.refreshSelect:focus {
+    border-color: #0083bf;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 191, 179, 0.2);
+}
+
+.datePicker {
+    position: absolute;
+    top: 45px;
+    left: 0;
+    z-index: 50;
+    width: 400px;
+    background-color: #fff;
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    animation: slideIn 0.2s ease-out;
+}
+.rightAligned {
+    left: -282px;
+}
+
+.tabs {
+    display: flex;
+    border-bottom: 1px solid #d9d9d9;
+}
+
+.tab {
+    flex: 1;
+    padding: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #666;
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.tab:hover {
+    background-color: #f5f7fa;
+}
+
+.tabActive {
+    /* color: #0083bf; */
+    background-color: #f5f7fa;
+    border-bottom: 2px solid #0083bf;
+    @apply text-orange-500;
+    @apply border-b-2 border-b-orange-500;
+}
+
+.tabContent {
+    padding: 16px;
+    padding-bottom: 8px;
+}
+
+.calendarHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    gap: 0.5rem;
+}
+
+.navButton {
+    padding: 6px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.navButton:hover {
+    background-color: #f5f7fa;
+    transform: scale(1.1);
+}
+
+.monthYearSelect {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-grow: 1;
+}
+
+.monthSelect,
+.yearSelect {
+    padding: 6px 12px;
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #333;
+    background-color: #fff;
+    flex: 1;
+    min-width: 0;
+    cursor: pointer;
+    transition: border-color 0.2s ease;
+}
+
+.monthSelect:focus,
+.yearSelect:focus {
+    /* border-color: #0083bf; */
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 191, 179, 0.2);
+}
+
+.calendar {
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.dayNames {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    margin-bottom: 8px;
+}
+
+.dayName {
+    text-align: center;
+    font-size: 12px;
+    font-weight: 500;
+    color: #666;
+    padding: 6px 0;
+}
+
+.daysGrid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+}
+
+.dayButton {
+    height: 32px;
+    width: 32px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    /* background-color: #fff; */
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.dayButton:hover {
+    /* background-color: #f5f7fa; */
+    transform: scale(1.05);
+}
+
+.daySelected {
+    /* background-color: #0083bf; */
+    color: #fff;
+    font-weight: 600;
+    @apply bg-orange-500;
+}
+
+.dayCurrent {
+    color: #333;
+}
+
+.dayToday {
+    /* background-color: #e6f7f5; */
+    font-weight: 600;
+}
+
+.dayOther {
+    color: #999;
+}
+
+.timeSelector {
+    display: flex;
+    align-items: center;
+    margin-top: 16px;
+}
+
+.dateControls {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 12px;
+}
+
+.dateControlButton {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    background-color: #fff;
+    font-size: 14px;
+    color: #333;
+    cursor: pointer;
+    overflow: hidden;
+    transition: border-color 0.2s ease;
+}
+.dateControlButton span {
+    min-width: 90px;
+    background-color: #e9edf3;
+    padding: 0.55rem;
+    border-right: 1px solid #d9d9d9;
+}
+.dateControlButton input {
+    border: none;
+    width: 100%;
+    padding: 8px;
+    outline: none;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom 0.2s ease-in-out;
+}
+
+.dateControlButton input:focus {
+    border-bottom: 2px solid #00a29a !important;
+}
+
+.dateControlsUpdateButton {
+    border: none;
+    appearance: none;
+    cursor: pointer;
+    text-align: center;
+    white-space: nowrap;
+    max-inline-size: 100%;
+    vertical-align: middle;
+    align-items: center;
+    justify-content: space-around;
+    inline-size: 32px;
+    block-size: 32px;
+    border-radius: 4px;
+    color: rgb(0, 97, 166);
+    background-color: #cce4f5;
+    flex-shrink: 0;
+    display: none;
+}
+
+.dateControlButton:hover {
+    border-color: #0083bf;
+}
+
+.timeDropdownContainer {
+    position: relative;
+}
+
+.timeButton {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #333;
+    background-color: #fff;
+    cursor: pointer;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.timeButton:hover {
+    border-color: #0083bf;
+    background-color: #f5f7fa;
+}
+
+.clockIcon {
+    margin-right: 8px;
+    color: #666;
+}
+
+.timeOptions {
+    width: 100%;
+    max-height: 242px;
+    overflow-y: auto;
+    background-color: #fff;
+    border-radius: 4px;
+    z-index: 10;
+}
+
+.timeOption {
+    display: block;
+    width: 100%;
+    padding: 8px 12px;
+    font-size: 14px;
+    color: #333;
+    background-color: #f7f8fc;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    padding-inline: 1.5rem;
+}
+
+.timeOption:hover {
+    background-color: #f5f7fa;
+}
+
+.timeOptionSelected {
+    background-color: #e6f7f5;
+    font-weight: 500;
+}
+
+.relativeInputs {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.relativeNumberInput {
+    width: 80px;
+    padding: 5px 12px;
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #333;
+    transition: border-color 0.2s ease;
+}
+
+.relativeNumberInput:focus {
+    border-color: #0083bf;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 191, 179, 0.2);
+}
+
+.relativeSelect {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #333;
+    background-color: #fff;
+    transition: border-color 0.2s ease;
+}
+
+.relativeSelect:focus {
+    border-color: #0083bf;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 191, 179, 0.2);
+}
+
+.roundToMinute {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.checkbox {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #d9d9d9;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.checkboxActive {
+    border-color: #0083bf;
+    background-color: #0083bf;
+}
+
+.checkmark {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.roundLabel {
+    font-size: 14px;
+    color: #333;
+}
+
+.nowContent {
+    padding: 16px;
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+}
+
+.actionFooter {
+    display: flex;
+    justify-content: flex-end;
+    padding: 12px 16px;
+    border-top: 1px solid #d9d9d9;
+    background-color: #f5f7fa;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.updateButton {
+    padding: 8px 20px;
+    /* background-color: #00a29a; */
+    color: #fff;
+    height: 38px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+.updateButton:disabled {
+    cursor: not-allowed;
+}
+.updateButton svg {
+    display: flex;
+    width: 18px;
+    height: 18px;
+    color: white;
+}
+
+.updateButton:hover {
+    /* background-color: #0083bf; */
+    transform: translateY(-1px);
+}
+
+.formSelect {
+    display: block;
+    width: 100%;
+    padding: 0.375rem 2.25rem 0.375rem 0.75rem;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.4;
+    color: #212529;
+    background-color: #fff;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' class='icon icon-tabler icons-tabler-outline icon-tabler-chevron-down'%3E%3Cpath stroke='none' d='M0 0h24v24H0z' fill='none'/%3E%3Cpath d='M6 9l6 6l6 -6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 16px;
+    border: 1px solid #ced4da;
+    border-radius: 0.275rem;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    outline: none;
+}
+
+.formSelect:focus {
+    border-color: none;
+    outline: none;
+}
+
+.formSelect:disabled {
+    background-color: #e9ecef;
+    opacity: 1;
+}
+
+.updateDateBtnActive {
+    display: inline-flex;
+}
+
+.isDateRangeActive {
+    background-color: #e2f8f0;
+}

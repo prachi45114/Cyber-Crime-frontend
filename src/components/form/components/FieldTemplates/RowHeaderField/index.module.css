@@ -1,0 +1,46 @@
+.container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+    margin-bottom: 0.5rem;
+    border-bottom: 2px solid #bbb9b959;
+    padding-block: 0.6rem;
+}
+.header_wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* gap: 0.23rem; */
+}
+.rowHeader {
+    font-weight: 500;
+    color: var(--text-color);
+}
+.container svg {
+    width: 20px;
+    height: 20px;
+    color: white;
+}
+
+.border {
+    position: absolute;
+    width: calc(100% + 1.5rem);
+    height: 100%;
+    background-color: transparent;
+    top: 0.65rem;
+    border-radius: 5rem;
+    border-top: 1px solid rgb(83, 82, 82);
+}
+.description {
+    font-size: 12.2px;
+    color: gray;
+}
+
+.icon {
+    background-color: var(--active-color);
+    padding: 0.45rem;
+    border-radius: 0.3rem;
+    padding-inline: 0.5rem;
+    box-shadow: 0 2px 6px var(--primary-box-shadow);
+}

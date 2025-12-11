@@ -1,0 +1,44 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: am-react-ingress-http
+  namespace: asset-v3
+  annotations:
+    traefik.ingress.kubernetes.io/router.entrypoints: web
+    traefik.ingress.kubernetes.io/router.middlewares: security-headers-middleware@kubernetescrd,default-redirectscheme@kubernetescrd
+spec:
+  ingressClassName: traefik
+  rules:
+   - host: assets-v3.k8.c3ihub
+     http:
+       paths:
+       - path: /
+         pathType: Prefix
+         backend:
+           service:
+             name: react
+             port:
+               number: 80
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: am-react-ingress-https
+  namespace: asset-v3
+  annotations:
+    traefik.ingress.kubernetes.io/router.entrypoints: websecure
+    traefik.ingress.kubernetes.io/router.tls: "true" # Enable TLS
+    traefik.ingress.kubernetes.io/router.middlewares: security-headers-middleware@kubernetescrd
+spec:
+  ingressClassName: traefik
+  rules:
+   - host: assets-v3.k8.c3ihub
+     http:
+       paths:
+       - path: /
+         pathType: Prefix
+         backend:
+           service:
+             name: react
+             port:
+               number: 80

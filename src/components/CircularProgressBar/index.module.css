@@ -1,0 +1,48 @@
+.progress_circle_container {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+}
+
+.progress_circle {
+    transform: rotate(-90deg);
+    width: 50px;
+    height: 50px;
+}
+
+.progress_circle_background {
+    stroke: #e6e6e6;
+}
+
+.progress_circle_foreground {
+    stroke: rgb(var(--theme-violet));
+    transition: stroke-dashoffset 0.3s ease;
+}
+.progress_circle_foreground_violet {
+    stroke: rgb(var(--theme-violet));
+    transition: stroke-dashoffset 0.3s ease;
+}
+.progress_circle_foreground_red {
+    stroke: rgb(var(--theme-red));
+    transition: stroke-dashoffset 0.3s ease;
+}
+.progress_circle_foreground_green {
+    stroke: rgb(var(--theme-green));
+    transition: stroke-dashoffset 0.3s ease;
+}
+.progress_circle_foreground_orange {
+    stroke: rgb(var(--theme-orange));
+    transition: stroke-dashoffset 0.3s ease;
+}
+
+.progress_text {
+    position: absolute;
+    top: 50%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+    font-size: 14px;
+    font-weight: bold;
+    /* color: #333; */
+    color: var(--text-color);
+}

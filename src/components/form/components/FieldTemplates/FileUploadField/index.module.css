@@ -1,0 +1,222 @@
+/* FileUpload.module.css */
+.fileUploadContainer {
+    width: 100%;
+    /* margin-bottom: 20px; */
+}
+
+.labelWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.label {
+    font-size: var(--label-font-size);
+    color: var(--initial-color);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.dark .label {
+    color: #ffffff !important;
+}
+
+.required {
+    color: #dc2626;
+    margin-left: 4px;
+}
+
+.infoText {
+    font-size: 12px;
+    color: #666;
+}
+
+.dropZone {
+    /* padding: 30px; */
+    text-align: center;
+    /* border: 2px dashed #e5e7eb; */
+    border-radius: 8px;
+    background-color: #f9fafb;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: var(--input-font-size);
+    color: var(--text-color);
+}
+
+.browse {
+    color: #2563eb;
+    text-decoration: underline;
+    margin-left: 4px;
+    cursor: pointer;
+}
+
+.filePond {
+    background-color: var(--background-color);
+    border-radius: 8px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.hasError {
+    border-color: #dc2626;
+}
+
+.errorMessage {
+    color: #dc2626;
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+.fileList {
+    margin-top: 16px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+}
+
+.fileItem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.fileItem:last-child {
+    border-bottom: none;
+}
+
+.fileInfo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.fileName {
+    font-size: 14px;
+    color: #333;
+    font-weight: 500;
+}
+
+.fileSize {
+    font-size: 12px;
+    color: #666;
+}
+
+.fileActions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.viewButton {
+    padding: 4px 12px;
+    background-color: #2563eb;
+    color: white;
+    border-radius: 4px;
+    font-size: 12px;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+.viewButton:hover {
+    background-color: #1d4ed8;
+}
+.file_upload_container {
+    cursor: pointer;
+}
+.file_upload_container > div:nth-child(1) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+.upload__icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--icon-background-color);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+}
+
+.upload__icon svg {
+    color: #86868e;
+    width: 20px;
+    height: 20px;
+}
+
+.drag__text {
+    line-height: 1;
+}
+.drag__text p:first-of-type {
+    font-size: 15px;
+    font-weight: 500;
+}
+.drag__text p:last-of-type {
+    font-size: 12px;
+    color: #7a7a82;
+    margin-top: 0.4rem;
+}
+.file__label_icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3rem;
+}
+.file__label_icon svg {
+    width: 15px;
+    height: 15px;
+    color: #7a7a82;
+    margin-bottom: 0.15rem;
+}
+
+.infoText {
+    font-size: 13px;
+    color: #7a7a82;
+    margin-top: 0.3rem;
+    margin-left: 0.2rem;
+}
+/* FilePond custom styles */
+:global(.filepond--panel-root) {
+    background-color: transparent;
+    border: 1px dashed var(--border-color);
+}
+:global(.filepond--wrapper) {
+    margin-top: -0.1rem;
+}
+:global(.filepond--root .filepond--drop-label) {
+    border-radius: 5px;
+    min-height: 8rem;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+    cursor: pointer;
+    line-height: 1;
+    text-align: center;
+    transition: border-color 0.3s, background-color 0.3s;
+    background-color: var(--whiteBackground);
+    border: 1px dashed var(--border-color);
+}
+:global(.filepond--drop-label) {
+    color: #666;
+    font-size: 14px;
+}
+
+:global(.filepond--label-action) {
+    text-decoration-color: #2563eb;
+}
+
+:global(.filepond--file-action-button) {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+:global(.filepond--progress-indicator) {
+    background-color: #2563eb;
+}

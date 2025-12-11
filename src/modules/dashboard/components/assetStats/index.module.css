@@ -1,0 +1,15 @@
+.chartContainer {
+    background-color: var(--background-color);
+    border: 1px solid var(--chart-border-color);
+}
+.chartContainer h3, .chartContainer h4 {
+    color: var(--text-color);
+}
+.subBox {
+    background-color: var(--sub-box-color);
+    border: 1px solid var(--chart-border-color);
+}
+.subBox p:first-of-type, .assetsColor {
+    color: var(--text-color);
+    opacity: 0.7;
+}

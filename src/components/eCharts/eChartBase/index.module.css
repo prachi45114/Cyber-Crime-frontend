@@ -1,0 +1,36 @@
+.container {
+    width: 100%;
+    background-color: white;
+    padding: 1rem;
+    border-radius: 6px;
+    padding: 1.4rem;
+    box-shadow: 0 3px 12px rgba(47, 43, 61, 0.14), 0 0 transparent, 0 0 transparent;
+    background-color: white;
+    border-radius: 0.3rem;
+    max-width: 600px;
+}
+
+.container > h2 {
+    /* display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-color); */
+    /* padding-block: 0.5rem; */
+    display: block;
+    padding-bottom: 0.7rem;
+    padding-top: 0.2rem;
+    color: var(--text-color);
+    font-weight: 500;
+    font-size: 1.125rem;
+}
+
+.chart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 250px;
+}

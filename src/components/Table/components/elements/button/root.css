@@ -1,0 +1,29 @@
+:root {
+    --button-font-weight: 450;
+    --button-font-size: 0.85rem;
+    --button-padding: 0.6rem 0.9rem;
+    --button-radius: 6px;
+    --button-letter-spacing: 0.04rem;
+
+    /* --primary-rgb: 245, 134, 52; */
+    --primary-rgb: 233, 87, 14;
+    --primary-text-color: #fff;
+
+    --secondary-rgb: 115, 118, 130;
+    --secondary-text-color: #fff;
+
+    --success-rgb: 40, 199, 111;
+    --success-text-color: #fff;
+
+    --info-rgb: 0, 186, 209;
+    --info-text-color: #fff;
+
+    --warning-rgb: 255, 159, 67;
+    --warning-text-color: #fff;
+
+    --danger-rgb: 255, 76, 81;
+    --danger-text-color: #fff;
+
+    --dark-rgb: 10, 10, 10;
+    --dark-text-color: #fff;
+}

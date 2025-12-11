@@ -1,0 +1,17 @@
+.container {
+    padding: 0.7rem;
+    border-bottom: 1px solid rgb(47, 43, 61, 0.12);
+}
+.error_message {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(var(--table-error-color), 0.25);
+    color: rgb(var(--table-error-color));
+    font-size: 0.9375rem;
+    font-weight: 400;
+    padding: 12px;
+    letter-spacing: 0.01rem;
+    word-spacing: 0.1rem;
+    border-radius: 0.3rem;
+}

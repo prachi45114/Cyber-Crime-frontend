@@ -1,0 +1,13 @@
+.stats_cards{
+    display: flex;
+    gap: 1rem;
+}
+.stats_big_charts{
+    display: flex;
+    gap: 1rem;
+    min-height: 600px;
+}
+
+.stats_big_charts div:first-of-type{
+    min-width: 800px !important;
+}

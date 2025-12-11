@@ -1,0 +1,41 @@
+.cardWrapper {
+    /* border: 1px solid var(--light-bg-color); */
+    border: 1px solid var(--border-color);
+    border-radius: 0.6rem;
+    cursor: pointer;
+}
+.cardContentWrapper {
+    padding: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.cardContentWrapper .cardIcon {
+    background-color: var(--icon-background-color);
+    border-radius: 50%;
+    padding: 0.9rem;
+}
+.cardIcon svg {
+    width: 27px;
+    height: 27px;
+    color: #797777;
+}
+.cardTextContent {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.5;
+}
+
+.cardTextContent h5 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.cardTextContent p {
+    font-size: 0.758rem;
+    color: var(--disabled-text-color);
+}

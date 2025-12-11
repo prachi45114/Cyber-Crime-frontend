@@ -1,0 +1,49 @@
+.stats_cards{
+    display: flex;
+    gap: 1rem;
+}
+
+.role {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+.role svg {
+    width: 20px;
+    height: 20px;
+}
+.editor {
+    color: rgb(255, 159, 67);
+}
+.subscriber {
+    color: rgb(40, 199, 111);
+}
+.admin {
+    color: rgb(115, 103, 240);
+}
+.maintainer {
+    color: rgb(0, 186, 209);
+}
+.author {
+    color: rgb(255, 76, 81);
+}
+.billing {
+    color: rgb(47, 43, 61, 0.7);
+}
+.status {
+    padding: 0.3rem 0.5rem;
+    border-radius: 0.3rem;
+    font-size: 13px;
+}
+.status.Active {
+    background-color: #dcf9e7;
+    color: rgb(40, 199, 111);
+}
+.status.Inactive {
+    background-color: #eaebed;
+    color: rgb(128, 131, 144);
+}
+.status.Pending {
+    background-color: rgb(255, 159, 67, 0.2);
+    color: rgb(255, 159, 67);
+}

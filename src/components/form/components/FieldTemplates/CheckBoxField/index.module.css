@@ -1,0 +1,79 @@
+.container {
+    position: relative;
+    width: 100%;
+   
+}
+
+.checkboxWrapper {
+    display: flex;
+    align-items: center;
+    /* gap: 0.5rem; */
+    justify-content: center;
+}
+
+.hiddenInput {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.iconWrapper {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    color: #a3a2a2;
+    transition: color 0.2s ease;
+    padding: 0.35rem;
+    border-radius: 1.5rem;
+}
+
+.iconWrapper:hover {
+    background-color: rgba(226, 224, 224, 0.3);
+}
+.iconWrapper .active {
+    color: var(--active-color);
+}
+
+.required {
+    color: #dc3545;
+    margin-left: 0.25rem;
+}
+
+.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.disabled .iconWrapper,
+.disabled .label {
+    cursor: not-allowed;
+}
+.label {
+    display: block;
+    width: 100%;
+    font-size: var(--label-font-size);
+    color: var(--initial-color);
+    cursor: pointer;
+}
+
+.dark .label {
+    color: #ffffff !important;
+}
+.error .iconWrapper {
+    color: #dc3545;
+}
+
+.errorMessage {
+    color: #dc3545;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+
+.iconWrapper svg {
+    transition: all 0.2s ease;
+}
+
+.iconWrapper:active svg {
+    transform: scale(0.95);
+}

@@ -1,0 +1,178 @@
+/* Dropdown Component CSS */
+.main_container {
+    max-width: 600px;
+    padding: 1.4rem;
+    box-shadow: 0 3px 12px rgba(47, 43, 61, 0.14), 0 0 transparent, 0 0 transparent;
+    background-color: white;
+    border-radius: 0.3rem;
+    width: 100%;
+    transition: 0.2s;
+}
+
+.main_container:hover {
+    box-shadow: 0 3px 15px rgba(47, 43, 61, 0.2), 0 0 transparent, 0 0 transparent;
+}
+
+.main_container_border_pink {
+    border-bottom: 2px solid rgb(var(--theme-pink), 0.4);
+} 
+
+.main_container_border_pink:hover {
+    border-bottom: 2px solid rgb(var(--theme-pink));
+}
+
+.main_container_border_violet:hover {
+    border-bottom: 2px solid rgb(var(--theme-violet));
+} 
+
+.main_container_border_violet:hover {
+    border-bottom: 2px solid rgb(var(--theme-violet));
+}
+
+.main_container_border_red {
+    border-bottom: 2px solid rgb(var(--theme-red), 0.4);
+}
+
+.main_container_border_red:hover {
+    border-bottom: 2px solid rgb(var(--theme-red));
+}
+
+.main_container_border_orange {
+    border-bottom: 2px solid rgb(var(--theme-orange), 0.4);
+}
+
+.main_container_border_orange:hover {
+    border-bottom: 2px solid rgb(var(--theme-orange));
+}
+
+.main_container_border_green {
+    border-bottom: 2px solid rgb(var(--theme-green), 0.4);
+}
+
+.main_container_border_green:hover {
+    border-bottom: 2px solid rgb(var(--theme-green));
+}
+
+.inner_container {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.5rem 0;
+}
+.details_container {
+    display: flex;
+    flex-direction: column;
+}
+
+.inner_container h4 {
+    font-size: 1.5rem !important;
+    font-weight: 500;
+    line-height: 2.375rem;
+    letter-spacing: normal !important;
+    font-family: Public Sans, sans-serif, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol;
+    text-transform: none !important;
+    color: rgb(67, 64, 80);
+    display: block;
+    margin-block-start: 0.4rem;
+    margin-block-end: 0.4rem;
+    font-size: 1.5rem;
+}
+
+.inner_container h6 {
+    font-size: 0.9375rem !important;
+    font-weight: 400;
+    display: block;
+}
+
+.sub_title {
+    font-size: 0.775rem !important;
+    font-weight: 300;
+    display: block;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    color: var(--disabled-text-color);
+}
+
+.icon_container {
+    flex: none;
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    line-height: normal;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    transition-property: width, height;
+    vertical-align: middle;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+}
+
+.violet {
+    background-color: rgb(var(--theme-violet), 0.15);
+    color: rgb(var(--theme-violet));
+}
+.red {
+    background-color: rgb(var(--theme-red), 0.15);
+    color: rgb(var(--theme-red));
+}
+.green {
+    background-color: rgb(var(--theme-green), 0.15);
+    color: rgb(var(--theme-green));
+}
+.orange {
+    background-color: rgb(var(--theme-orange), 0.15);
+    color: rgb(var(--theme-orange));
+    /* color: rgb(255, 160, 66); */
+}
+
+/* @media screen and (max-width: 1000px) {
+    .dropdown_content {
+        left: 0rem !important;
+        width: fit-content;
+    }
+} */
+
+.item_details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.category p {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.stat_info {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.7rem;
+    line-height: 2;
+    color: var(--disabled-text-color);
+}
+.actionBtn {
+    border-radius: 0.3rem;
+    background-color: var(--light-bg-color);
+    padding: 0.28rem;
+    margin-left: auto;
+}
+.actionBtn svg {
+    width: 20px;
+    height: 20px;
+}
+
+.actionBtn:hover {
+    background-color: var(--disabled-bg-color);
+    cursor: pointer;
+}
+
+.cardTitle {
+    padding-block: 1rem;
+    color: var(--text-color);
+    font-weight: 500;
+    font-size: 1.2rem;
+}

@@ -1,0 +1,82 @@
+.tabs {
+    display: flex;
+    align-items: center;
+    /* border: 1px solid #253db7; */
+    width: fit-content;
+    border-radius: 0.3rem;
+    margin-top: 0.3rem;
+    margin-bottom: 0.8rem;
+    position: relative;
+    z-index: 10;
+    padding: 0.1rem;
+
+    --tw-bg-opacity: 0.6;
+    background-color: rgb(229 231 235 / var(--tw-bg-opacity));
+    border-radius: 9999px;
+    display: inline-flex;
+    /* padding: 0.25rem; */
+}
+.tabs h4 {
+    font-size: 0.8rem;
+    padding-inline: 0.65rem;
+    padding-block: 0.15rem;
+    cursor: pointer;
+    text-transform: capitalize;
+    border-radius: 0.3rem;
+    font-weight: 400;
+
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.25rem;
+    padding: 0.5rem 1rem;
+    transition-duration: 0.3s;
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    --tw-text-opacity: 1;
+    color: rgb(55 65 81 / var(--tw-text-opacity));
+}
+.tabs p {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+}
+.tabs h4 span {
+    color: white;
+    background-color: #253db7;
+    padding-inline: 0.5rem;
+    /* padding-block: 0.3rem; */
+    /* padding-bottom: 0.2rem; */
+    font-size: 0.7rem;
+    border-radius: 1rem;
+}
+.tabs h4.active span {
+    /* background-color: white;
+    color: #253db7; */
+}
+.tabs h4.active {
+    /* background-color: #253db7;
+    color: white; */
+
+    border-radius: 999px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    /* line-height: 1.25rem; */
+    /* padding: 0.5rem 1rem; */
+    transition-duration: 0.3s;
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+    --tw-shadow: 0 4px 6px -1px #0000001a, 0 2px 4px -2px #0000001a;
+    --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
+
+    box-shadow: 0 0 #0000, 0 0 #0000, var(--tw-shadow);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+
+    --tw-text-opacity: 1;
+    color: rgb(79 70 229 / var(--tw-text-opacity));
+
+    --tw-bg-opacity: 1;
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}

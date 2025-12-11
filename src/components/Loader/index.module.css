@@ -1,0 +1,19 @@
+.container {
+    width: 100%;
+    padding-block: 0.6rem;
+    padding-inline: 0.7rem;
+    background-color: rgba(var(--theme-primary), 0.1);
+    border: 1px solid rgb(var(--theme-primary), 0.2);
+    border-radius: 0.3rem;
+    margin-top: 1rem !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    color: rgb(var(--theme-primary)) !important;
+}
+.container p {
+    color: rgb(var(--theme-primary)) !important;
+    font-weight: 500;
+    font-size: 0.85rem;
+}

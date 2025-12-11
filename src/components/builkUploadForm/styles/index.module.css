@@ -1,0 +1,20 @@
+.container {
+    padding: 1.3rem;
+    background-color: var(--whiteBackground);
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+}
+.file_upload_label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: 1rem;
+    color: var(--text-color);
+}
+.file_upload_label a {
+    color: var(--violet-color) !important;
+}
+.error_container {
+    color: rgb(var(--theme-error));
+}

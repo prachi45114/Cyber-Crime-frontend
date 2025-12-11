@@ -1,0 +1,27 @@
+.container {
+    padding: 0.5rem;
+}
+.container ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+}
+.container ul li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.container ul li span {
+    font-size: 0.85rem;
+}
+.container ul li span.label {
+    min-width: 250px;
+    font-weight: 450;
+    color: var(--text-color);
+}
+.container ul li span.value {
+    font-weight: 350;
+    font-size: 0.85rem;
+    color: rgb(151, 151, 151) !important;
+}
+

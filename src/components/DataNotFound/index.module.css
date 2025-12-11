@@ -1,0 +1,44 @@
+.container {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    /* border: 1px solid #e0e0e0; */
+    border-radius: 2px;
+    background-color: var(--backgroundColor);
+    color: #555;
+    text-align: center;
+    width: 100%;
+    /* height: 100%; */
+}
+
+.image {
+    width: 100px;
+    height: auto;
+    opacity: 0.8;
+    text-align: center;
+    /* mix-blend-mode: multiply; */
+}
+
+.message {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #95969C;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .container {
+        padding: 40px;
+    }
+
+    .image {
+        max-width: 178px;
+        width: 100%;
+    }
+
+    .message {
+        font-size: 1.2rem;
+    }
+}

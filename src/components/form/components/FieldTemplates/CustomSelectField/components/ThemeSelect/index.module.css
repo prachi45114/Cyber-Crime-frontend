@@ -1,0 +1,25 @@
+.container {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+}
+.container > div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    cursor: pointer;
+}
+.label {
+    font-size: var(--label-font-size);
+    color: rgb(43, 47, 61, 0.7);
+}
+.icon_container {
+    border-radius: 0.5rem;
+    border: 1px solid #f5f5f5;
+    background-color: #f8f7fc;
+}
+.icon_container.active {
+    outline: 2px solid var(--active-color);
+    border: 1px solid transparent;
+}

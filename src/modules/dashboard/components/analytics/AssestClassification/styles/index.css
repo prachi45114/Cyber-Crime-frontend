@@ -1,0 +1,6 @@
+.assets_classification_chart > div {
+    padding: 0 !important;
+    box-shadow: none !important;
+    /* max-width: 300px !important;
+    max-height: 300px !important; */
+}

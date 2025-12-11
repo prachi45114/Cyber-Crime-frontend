@@ -1,0 +1,93 @@
+.formGroup {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    /* margin-bottom: 1rem; */
+}
+.label {
+    font-size: var(--label-font-size);
+    color: var(--initial-color);
+}
+
+.dark .label {
+    color: #ffffff !important;
+}
+
+.required {
+    color: var(--required-color);
+}
+.inputWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    min-height: 4.2rem;
+}
+.inputWrapper textarea {
+    border: 1px solid var(--border-color);
+    padding: 0.5rem 0.7rem;
+    font-size: var(--textarea-font-size);
+    border-radius: var(--field-border-radius);
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    min-height: var(--textarea-min-height);
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+.inputWrapper textarea::placeholder {
+    font-weight: var(--placeholder-font-weight);
+    font-size: var(--placeholder-font-size);
+}
+.inputWrapper textarea:hover {
+    border: 1px solid var(--hover-border-color);
+}
+
+.inputWrapper textarea::-ms-expand {
+    background-color: transparent;
+    border: 0;
+}
+
+.inputWrapper textarea:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 #6e6b7b;
+}
+
+.inputWrapper textarea:focus {
+    color: #6e6b7b;
+    background-color: var(--whiteBackground) !important;
+    border: 2px solid var(--active-border-color);
+    outline: 0;
+    box-shadow: var(--active-box-shadow);
+}
+.formGroup .inputWrapper:has(textarea:focus) .label {
+    color: var(--active-color);
+}
+
+.inputWrapper textarea::-moz-placeholder {
+    color: var(--placeholder-color);
+}
+
+.inputWrapper textarea:-ms-textarea-placeholder {
+    color: var(--placeholder-color);
+}
+
+.inputWrapper textarea::placeholder {
+    color: var(--placeholder-color);
+}
+
+.inputWrapper textarea:disabled,
+.inputWrapper textarea[readonly] {
+    background-color: var(--disabled-field-background-color) !important;
+    opacity: 0.7;
+}
+.errorText {
+    font-size: var(--label-font-size);
+    color: var(--error-color);
+    letter-spacing: var(--field-letter-spacing);
+}
+.inputError {
+    border: 2px solid var(--error-color) !important;
+}
+.formGroup .inputWrapper:has(textarea.inputError) .label {
+    color: var(--error-color);
+    letter-spacing: var(--field-letter-spacing);
+}

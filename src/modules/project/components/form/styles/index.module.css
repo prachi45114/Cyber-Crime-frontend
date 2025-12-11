@@ -1,0 +1,12 @@
+.container {
+    background-color: var(--background-color);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    border: 1px solid var(--border-color);
+    transition: all 0.2s ease-in-out;
+}
+
+.dark .container {
+    background-color: #252526;
+    border-color: #3e3e42;
+}

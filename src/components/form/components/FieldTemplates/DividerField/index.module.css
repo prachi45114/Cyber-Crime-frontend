@@ -1,0 +1,7 @@
+.dividerLine {
+    border: none;
+    height: 1px;
+    background-color: #dfdfdf5c;
+    width: 100%;
+    margin: 0.5rem 0;
+}

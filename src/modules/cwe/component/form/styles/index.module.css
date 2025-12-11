@@ -1,0 +1,6 @@
+.container {
+    background-color: var(--whiteBackground);
+    border-radius: 0.5rem;
+    padding: 1.3rem;
+    border: 1px solid var(--border-color);
+}

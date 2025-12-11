@@ -1,0 +1,88 @@
+.formGroup {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    /* margin-bottom: 1rem; */
+}
+.label {
+    font-size: var(--label-font-size);
+    color: var(--initial-color);
+}
+
+.dark .label {
+    color: #ffffff !important;
+}
+
+.required {
+    color: var(--required-color);
+}
+.inputWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    min-height: 4.2rem;
+}
+.inputWrapper input {
+    border: 1px solid var(--initial-border-color);
+    padding: 0.5rem 0.7rem;
+    font-size: var(--input-font-size);
+    border-radius: var(--field-border-radius);
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.inputWrapper input:hover {
+    border: 1px solid var(--hover-border-color);
+}
+
+.inputWrapper input::-ms-expand {
+    background-color: transparent;
+    border: 0;
+}
+
+.inputWrapper input:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 #6e6b7b;
+}
+
+.inputWrapper input:focus {
+    color: #6e6b7b;
+    background-color: var(--active-field-background-color);
+    border: 2px solid var(--active-border-color);
+    outline: 0;
+    box-shadow: var(--active-box-shadow);
+}
+.formGroup .inputWrapper:has(input:focus) .label {
+    color: var(--active-color);
+}
+
+.inputWrapper input::-moz-placeholder {
+    color: var(--placeholder-color);
+}
+
+.inputWrapper input:-ms-input-placeholder {
+    color: var(--placeholder-color);
+}
+
+.inputWrapper input::placeholder {
+    color: var(--placeholder-color);
+}
+
+.inputWrapper input:disabled,
+.inputWrapper input[readonly] {
+    background-color: var(--disabled-field-background-color) !important;
+    opacity: 0.7;
+}
+.errorText {
+    font-size: var(--label-font-size);
+    color: var(--error-color);
+    letter-spacing: var(--field-letter-spacing);
+}
+.inputError {
+    color: var(--error-color) !important;
+    letter-spacing: var(--field-letter-spacing) !important;
+}
+
+.inputWrapper input::placeholder {
+    font-weight: var(--placeholder-font-weight);
+    font-size: var(--placeholder-font-size);
+}
