@@ -1,5 +1,0 @@
-.pagination_arrow.disabled a,
-.pagination_arrow.disabled {
-    color: var(--disabled-filed-text-color);
-    cursor: not-allowed !important;
-}
