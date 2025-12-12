@@ -2,19 +2,21 @@ import cdrApiClient from "./config";
 
 class CdrApiService {
 
-    // static async details(id, signal) {
-    //     const response = await projectApiClient.get("/" + id, {
-    //         signal,
-    //     });
-    //     return response.data;
-    // }
-
     static async getList(params, signal) {
         const response = await cdrApiClient.get("/", {
             signal,
             params,
         });
         console.log("cdr",response)
+        return response.data;
+    }
+    static async uploadFile(id, payload, signal) {
+        const response = await cdrApiClient.post(`/${id}/files`, payload, {
+            headers: {
+                "Content-Type": "multipart/form-data",
+            },
+            signal,
+        });
         return response.data;
     }
 

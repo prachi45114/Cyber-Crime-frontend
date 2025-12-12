@@ -1,12 +1,7 @@
 import {  Home, Upload, Folder } from "lucide-react";
 
 export const menuItems = [
-    {
-        id: "overview",
-        label: "Overview",
-        icon: Home,
-        path: "/",
-    },
+
     {
         id: "cdr-record",
         label: "CDR Record",
@@ -14,13 +9,7 @@ export const menuItems = [
         count: null,
         path: "/cdr-records",
     },
-    {
-        id: "bulk-upload",
-        label: "Bulk Upload",
-        icon: Upload,
-        count: null,
-        path: "/upload",
-    },
+
 ];
 
 export const ICON = {

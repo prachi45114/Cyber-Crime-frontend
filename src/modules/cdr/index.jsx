@@ -1,6 +1,6 @@
 import React, { useMemo, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { AlertTriangle, ArrowDownCircle, ArrowUpCircle, CalendarCheck, CheckCircle2, Clock, Edit, FileText, MinusCircle, Plus, RefreshCcw, XCircle } from "lucide-react";
+import { AlertTriangle, ArrowDownCircle, ArrowUpCircle, CalendarCheck, CheckCircle2, PhoneCall, Clock, Edit, FileText, MinusCircle, Plus, RefreshCcw, XCircle, Upload } from "lucide-react";
 import Utils from "@/utils";
 import NewTable from "@/components/Table";
 import { Button } from "@/components/ui/button";
@@ -9,6 +9,7 @@ import GlobalICONS from "@/lib/utils/icons";
 import ModalPopup from "@/components/ui/modal";
 import { CDRLIST_API } from "@/lib/utils/apiEndPoints/cdr-record";
 import {useCdr}  from "@/services/context/cdr";
+import UploadCdrForm from "./pages/UploadCdrForm";
 
 const CDR = () => {
     const [show, setShow] = useState(false);
@@ -45,66 +46,87 @@ const CDR = () => {
         },
     };
 
- const formatTableData = (data) => {
-    console.log("API Data: ", data);
+    const formatTableData = (data) => {
+        const url = CDRLIST_API.LIST;
 
-    const url = CDRLIST_API.LIST;
-
-    return {
-        url,
-        filters: {
-            row1: {
-                data: [
-                    {
-                        type: "search",
-                        placeholder: "Search by Target No, B Party No...",
-                        name: "search",
-                    },
-                    {
-                        type: "select",
-                        name: "callType",
-                        label: "Call Type",
-                        options: [
-                            { label: "Incoming", value: "incoming" },
-                            { label: "Outgoing", value: "outgoing" },
-                            { label: "Missed", value: "missed" },
-                        ],
-                    },
-                ],
+        return {
+            url,
+            filters: {
+                row1: {
+                    data: [
+                        {
+                            type: "search",
+                            placeholder: "Search Target No, B Party No...",
+                            name: "search",
+                        },
+                        {
+                            type: "select",
+                            name: "callType",
+                            label: "Call Type",
+                            options: [
+                                { label: "Incoming", value: "incoming" },
+                                { label: "Outgoing", value: "outgoing" },
+                                { label: "Missed", value: "missed" },
+                            ],
+                        },
+                    ],
+                },
             },
-        },
 
-        // 👇👇 IMPORTANT — THIS MUST BE "rows"
-     rows: Array.isArray(data)
-    ? data.map((item) => ({
-          "Target No": { key: "target_no", value: item.target_no },
-          "Call Type": { key: "call_type", value: item.call_type },
-          TOC: { key: "toc", value: item.toc },
-          "B Party No": { key: "b_party_no", value: item.b_party_no },
-          "LRN No": { key: "lrn_no", value: item.lrn_no },
-          "LRN TSP-LSA": { key: "lrn_tsp_lsa", value: item.lrn_tsp_lsa },
-        //   Date: { key: "call_date", value: Utils.formatDate(item.call_date) },
-          Time: { key: "call_time", value: item.call_time },
-          "Dur(s)": { key: "duration", value: item.duration },
-          "First BTS": { key: "first_bts", value: item.first_bts },
-          "First CGI": { key: "first_cgi", value: item.first_cgi },
-          "Last BTS": { key: "last_bts", value: item.last_bts },
-          "Last CGI": { key: "last_cgi", value: item.last_cgi },
-          "SMSC No": { key: "smsc_no", value: item.smsc_no },
-          "Service Type": { key: "service_type", value: item.service_type },
-          IMEI: { key: "imei", value: item.imei },
-          IMSI: { key: "imsi", value: item.imsi },
-      }))
-    : [],
+            rows: Array.isArray(data)
+                ? data.map((item) => ({
+                    "Target No": {
+                        key: "target_no",
+                        value: (
+                            <Link
+                                to={`/cdr/${encodeURIComponent(item.target_no)}`}  
+                                className="font-semibold text-orange-600 hover:text-orange-700 underline cursor-pointer"
+                            >
+                                {item.target_no}
+                            </Link>
+                        ),
+                    },
 
-        totalPages: data?.totalPages || 1,
-        totalDocuments: data?.total || 0,
-        hasCheckbox: false,
-        formatTableData,
+                    "Call Type": {
+                        key: "call_type",
+                        value: (
+                            <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-700 dark:bg-blue-950/50 dark:text-blue-300">
+                                <PhoneCall className="w-3 h-3" />
+                                {Utils.capitalizeEachWord(item.call_type)}
+                            </span>
+                        ),
+                    },
+
+                    "B Party": { key: "b_party_no", value: item.b_party_no },
+
+                    Date: {
+                        key: "call_date",
+                        value: (
+                            <span className="flex items-center gap-1 min-w-32">
+                                <CalendarCheck className="w-4 h-4 text-green-600" />
+                                {Utils.formatDateTime(item.call_date)}
+                            </span>
+                        ),
+                    },
+
+                    Duration: {
+                        key: "duration",
+                        value: (
+                            <span className="flex items-center gap-1 text-gray-700 dark:text-white">
+                                <Clock className="w-4 h-4 text-violet-500" />
+                                {item.duration + " sec"}
+                            </span>
+                        ),
+                    },
+                }))
+                : [],
+
+            totalPages: data?.totalPages || 1,
+            totalDocuments: data?.total || 0,
+            hasCheckbox: false,
+            formatTableData,
+        };
     };
-};
-
-
 
    const tableConfig = useMemo(() => formatTableData(cdrList.data), [cdrList.data, refreshTable]);
 
@@ -122,12 +144,13 @@ const CDR = () => {
                     <h1 className="text-3xl font-bold text-foreground dark:text-gray-200">CDR Records</h1>
                     <p className="text-muted-foreground mt-1 dark:text-gray-400">View and analyze detailed call data records for Investigation</p>
                 </div>
-                {/* <CanAccess resource="projects" action="create|manage" hideDenied={true}>
-                    <Button onClick={() => setShow(true)} className="bg-gradient-to-r from-primary to-primary-glow hover:from-primary-glow hover:to-primary">
-                        <Plus className="mr-2 h-4 w-4" />
-                        Add Project
-                    </Button>
-                </CanAccess> */}
+                <Button
+                    onClick={() => setShow(true)}
+                    className="bg-gradient-to-r from-primary to-primary-glow hover:from-primary-glow hover:to-primary"
+                >
+                    <Upload className="mr-2 h-4 w-4" />
+                    Upload CSV
+                </Button>
             </div>
             <div>
                 <NewTable tableConfig={tableConfig} />
@@ -141,7 +164,7 @@ const CDR = () => {
                 title="Add New Project"
                 icon={<FileText className="w-4 h-4 text-gray-600 dark:text-white" />}
             >
-                {/* <ProjectInfoForm onCancel={() => setShow(false)} onSuccess={onSuccess} /> */}
+              <UploadCdrForm onSuccess={onSuccess} onCancel={() => setShow(false)} />
             </ModalPopup>
         </div>
     );

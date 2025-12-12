@@ -4,11 +4,9 @@ import { Route, Routes } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import Layout from "./layout";
 import Dashboard from "./modules/dashboard";
-import AccessDenied from "./components/CanAccess";
-import Projects from "./modules/project";
-import ProjectDetail from "./modules/project/pages/detail";
-import CreateProject from "./modules/project/pages/add/CreateProject";
 import CDR from "./modules/cdr/";
+import CDRFlowTree from "./modules/cdr/components/CDRFlow/CDRFlowTree";
+import CDRDetail from "./modules/cdr/pages/CDRDetailPage";
 function App() {
     return (
         <>
@@ -40,38 +38,23 @@ function App() {
                                         }
                                     />
                                     <Route
-                                        path="/project/create"
+                                        path="/cdr/:cdrId"
                                         element={
-                                            <React.Suspense fallback={""}>
-                                                <CreateProject />
+                                            <React.Suspense fallback="">
+                                                <CDRDetail />
                                             </React.Suspense>
                                         }
                                     />
                                     <Route
-                                        path="/project/:projectId"
+                                        path="/cdr-flow"
                                         element={
                                             <React.Suspense fallback={""}>
-                                                <ProjectDetail />
+                                                <CDRFlowTree/>
                                             </React.Suspense>
                                         }
                                     />
-                                    {/* <Route
-                                        path="/project/:projectId/assets"
-                                        element={
-                                            <React.Suspense fallback={""}>
-                                                <Asset />
-                                            </React.Suspense>
-                                        }
-                                    /> */}
                                 </Routes>
                             </Layout>
-                    }
-                />
-
-                <Route
-                    path="/access-denied"
-                    element={
-                        <AccessDenied />
                     }
                 />
             </Routes>
