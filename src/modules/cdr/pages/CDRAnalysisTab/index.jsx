@@ -18,6 +18,7 @@ const CDRAnalysisTab = ({ targetNo }) => {
   const [modalContent, setModalContent] = useState(null);
   const [modalLoading, setModalLoading] = useState(false);
 
+  
   // "More" items modal (when there are >2 items)
   const [itemsListModalOpen, setItemsListModalOpen] = useState(false);
   const [itemsListModalTitle, setItemsListModalTitle] = useState("");
